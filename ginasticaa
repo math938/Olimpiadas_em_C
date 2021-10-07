@@ -1,0 +1,71 @@
+/*
+função Ginastica
+*/
+void ginasticaArtistica( ) 
+    {
+
+        // declarando as variáveis
+        int cont;
+        int contb;
+        
+        float nota, soma=0, menor=10;
+        float notab, somab=0, menorb=10;
+        
+        char nome;
+        char nomeb;
+        
+        // declarando o nome
+        printf("\n Ginastica Artistica \n");
+        printf("\n O atleta A é o: ");
+        scanf("%s", &nome);
+        printf("\n O atleta B é o: ");
+        scanf("%s", &nomeb);
+        
+        // entrada de dados e mostrando os resultados
+        for (cont=1; cont<=5; cont++){
+            
+            printf (" A %d° nota que o Juiz deu para o atleta A foi : ", cont); 
+            scanf ("%f", &nota);
+            
+            if (nota<0 || nota>10)
+            {
+                printf("\nA nota deve estar entre 0 e 10, digite novamente: ");
+                scanf ("%f", &nota);
+            }
+            soma=soma+nota;
+            if (nota<menor)
+                menor=nota;
+        }    
+        printf("\n A soma das notas e: %.2f",soma-menor);
+        printf("\n A menor das notas e: %.2f\n",menor);
+
+        for (contb=1; contb<=5; contb++){
+                        
+            printf ("A %d° nota que o Juiz deu para o atleta B foi : ", contb); 
+            scanf ("%f", &notab);
+            
+            if (notab<0 || notab>10)
+            {
+                printf("\nA nota deve estar entre 0 e 10, digite novamente: ");
+                scanf ("%f", &notab);
+            }
+            somab=somab+notab;
+            if (notab<menorb)
+                menorb=notab;
+        }
+        printf("\n A soma das notas e: %.2f",somab-menorb);
+        printf("\n A menor das notas e: %.2f \n",menorb);
+        
+            // mostrando o resultado
+            if (soma>somab){
+
+                 printf("\nO vencedor foi o atleta A, com uma nota final de %.2f \n", soma-menor);
+            }else if(soma<somab){
+ 
+                printf("\nO vencedor foi o atleta B, com uma nota final de %.2f \n", somab-menorb);
+            }else if(soma == somab){
+
+                printf("\n Houve um empate");
+            }
+        return ;
+        }
