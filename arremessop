@@ -1,0 +1,78 @@
+/*
+função Arremesso
+*/
+
+void arremessoPeso ( )
+
+{
+    // declarando as variáveis
+    int i;
+    int ib;
+    
+    float distancia, maior1=0, maior2=0;
+    float distanciab, maior1b=0, maior2b=0;
+    
+    char nome;
+    char nomeb;
+    
+    // declarando o nome
+    printf("\n Arremesso de Peso \n");
+    printf("\n O Atleta A é o: ");
+    scanf("%s", &nome);
+    printf("\n O Atleta B é o: ");
+    scanf("%s", &nomeb);
+   
+   //entrada de dados e mostrando os resultados
+   for( i = 1; i < 4; i++ )
+   {
+         printf("O atleta A faz seu %d° arremesso de : ", i);
+         scanf("%f",&distancia);
+        if(distancia > maior1){
+            if(maior1> maior2){
+                maior2=maior1;
+            }
+            maior1=distancia;
+        }
+        if(maior1>=maior2 && distancia != maior1){
+            if(distancia > maior2){
+                maior2=distancia;
+            }
+        }
+   }
+    printf("\n O atleta A teve como melhor arremesso a distancia de: %.2f metros \n",maior1);
+    for( ib = 1; ib < 4; ib++ )
+   {
+         printf(" O atleta B faz seu %d° arremesso de : ", ib);
+         scanf("%f",&distanciab);
+        if(distanciab > maior1b){
+            if(maior1b> maior2b){
+                maior2b=maior1b;
+            }
+            maior1b=distanciab;
+        }
+        if(maior1b>=maior2b && distanciab != maior1b){
+            if(distanciab > maior2b){
+                maior2b=distanciab;
+            }
+        }
+   }
+    printf("\n O atleta B teve como melhor arremesso a distancia de: %.2f metros \n",maior1b);
+            
+        // mostrando o resultado
+        printf("\n R E S U L T A D O \n");
+        
+    if (maior1 > maior1b){
+        printf("\n O vencedor foi o atleta A com um arremesso de: %.2f metros \n",maior1);
+    }else if(maior1 < maior1b){
+        printf("\n O vencedor foi o atleta B com um arremesso de: %.2f metros \n",maior1b);
+    }
+    // caso ocorrer um empate
+    if (maior1 == maior1b){
+        if (maior2 > maior2b){
+            printf("\n Após empate, foi julgado o segundo maior arremesso. Sendo assim, o atleta A vence com o arremesso de: %.2f metros \n", maior2);
+        }else if (maior2 < maior2b){
+            printf("\n Após empate, foi julgado o segundo maior arremesso. Sendo assim, o atleta B vence com o arremesso de: %.2f metros \n", maior2b);
+        }
+    }
+    return;
+}
